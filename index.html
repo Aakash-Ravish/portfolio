@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>Aakash Ravish — Business Analyst & Operations</title>
+<meta name="description" content="Aakash Ravish — Business Analyst & Operations Coordinator. Sydney, NSW. Data-driven process improvement, SQL, Tableau, Excel.">
+<meta property="og:title" content="Aakash Ravish — Business Analyst & Operations">
+<meta property="og:description" content="Operations and Business Analyst turning floor-level operational data into decisions. Sydney, NSW. Open to work.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+  :root{
+    --bg:#0a0a0a;
+    --bg-raised:#141414;
+    --bg-card:#161616;
+    --border:#262626;
+    --text:#f2f2f0;
+    --text-dim:#9a9a95;
+    --accent:#e54c2a;
+    --accent-dim:#e54c2a33;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Space Grotesk',sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    overflow-x:hidden;
+  }
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{animation-duration:0.01ms !important; animation-iteration-count:1 !important; transition-duration:0.01ms !important;}
+  }
+  .container{max-width:1120px;margin:0 auto;padding:0 1.5rem;}
+  a{color:inherit;}
+
+  /* nav */
+  nav.site-nav{
+    position:sticky; top:0; z-index:50;
+    background:rgba(10,10,10,0.85); backdrop-filter:blur(12px);
+    border-bottom:1px solid var(--border);
+  }
+  .nav-inner{display:flex; align-items:center; justify-content:space-between; padding:1.1rem 0;}
+  .brand{font-weight:800; letter-spacing:-0.02em; font-size:1.05rem;}
+  .nav-links{display:flex; align-items:center; gap:1.75rem; font-size:0.9rem; font-weight:500;}
+  .nav-links a{color:var(--text-dim); text-decoration:none; transition:color .2s;}
+  .nav-links a:hover{color:var(--text);}
+  .btn{
+    display:inline-flex; align-items:center; gap:.5rem;
+    background:var(--accent); color:#0a0a0a; font-weight:700;
+    padding:.6rem 1.2rem; border-radius:999px; text-decoration:none; font-size:.85rem;
+    transition:transform .2s, box-shadow .2s;
+  }
+  .btn:hover{transform:translateY(-2px); box-shadow:0 8px 24px var(--accent-dim);}
+  .btn-outline{
+    background:transparent; color:var(--text); border:1px solid var(--border);
+  }
+  .hamburger{display:none; background:none; border:none; color:var(--text); font-size:1.4rem; cursor:pointer;}
+  .mobile-menu{
+    display:none; flex-direction:column; gap:1rem; padding:1.25rem 1.5rem 1.75rem;
+    border-bottom:1px solid var(--border); background:var(--bg-raised);
+  }
+  .mobile-menu.open{display:flex;}
+  .mobile-menu a{color:var(--text-dim); text-decoration:none; font-weight:500;}
+  @media (max-width:840px){
+    .nav-links{display:none;}
+    .hamburger{display:block;}
+  }
+
+  /* badge */
+  .pulse-badge{
+    display:inline-flex; align-items:center; gap:.5rem;
+    border:1px solid #22c55e55; background:#22c55e14; color:#4ade80;
+    padding:.4rem .9rem; border-radius:999px; font-size:.8rem; font-weight:600;
+  }
+  .pulse-dot{width:8px; height:8px; border-radius:50%; background:#4ade80; animation:pulse 2s infinite;}
+  @keyframes pulse{
+    0%{box-shadow:0 0 0 0 #4ade8066;}
+    70%{box-shadow:0 0 0 8px #4ade8000;}
+    100%{box-shadow:0 0 0 0 #4ade8000;}
+  }
+
+  /* hero */
+  .hero{padding:6rem 0 5rem; position:relative; overflow:hidden;}
+  .hero-blob{
+    position:absolute; z-index:-1; border-radius:50%; filter:blur(70px);
+    background:radial-gradient(circle at 30% 30%, var(--accent) 0%, transparent 70%);
+    opacity:.28; animation:blobFloat 14s ease-in-out infinite;
+  }
+  .hero-blob.b1{width:420px; height:420px; top:-140px; right:-120px;}
+  /* dimmed — sits behind the social icon row (linkedin/github/etc), was too bright before */
+  .hero-blob.b2{width:300px; height:300px; bottom:-160px; left:-100px; opacity:.08; animation-duration:18s; animation-delay:-6s;}
+  @keyframes blobFloat{
+    0%,100%{transform:translate(0,0) scale(1);}
+    33%{transform:translate(-30px,25px) scale(1.08);}
+    66%{transform:translate(20px,-20px) scale(0.95);}
+  }
+
+  /* the "ball" — a distinct 3D-shaded sphere, not just a blurred glow, drifting around the hero */
+  .hero-orb{
+    position:absolute; z-index:-1; width:130px; height:130px; border-radius:50%;
+    background:radial-gradient(circle at 32% 28%, #ff9a6e 0%, var(--accent) 42%, #7a2c14 100%);
+    box-shadow:inset -14px -14px 28px rgba(0,0,0,.45), inset 6px 6px 14px rgba(255,255,255,.12), 0 25px 70px rgba(229,76,42,.4);
+    top:6%; right:8%;
+    animation:orbFloat 9s ease-in-out infinite;
+  }
+  @keyframes orbFloat{
+    0%,100%{transform:translate(0,0) rotate(0deg);}
+    25%{transform:translate(-18px,22px) rotate(8deg);}
+    50%{transform:translate(10px,40px) rotate(-6deg);}
+    75%{transform:translate(20px,10px) rotate(4deg);}
+  }
+  @media (max-width:840px){ .hero-orb{width:80px; height:80px; top:2%; right:4%;} }
+  @media (prefers-reduced-motion: reduce){ .hero-blob, .hero-orb{animation:none;} }
+  .hero h1{
+    font-size:clamp(2.1rem,5.5vw,3.6rem); font-weight:800; line-height:1.12; letter-spacing:-0.02em;
+    margin:1.5rem 0 1.25rem;
+  }
+  .hero h1 .accent{color:var(--accent);}
+  .hero p.lede{color:var(--text-dim); font-size:1.1rem; line-height:1.7; max-width:640px;}
+  .hero-actions{display:flex; gap:.9rem; margin-top:2rem; flex-wrap:wrap;}
+  .social-row{display:flex; gap:.9rem; margin-top:2.25rem;}
+  .social-row a{
+    width:42px; height:42px; display:flex; align-items:center; justify-content:center;
+    border:1px solid var(--border); border-radius:50%; color:var(--text-dim); text-decoration:none;
+    transition:all .2s;
+  }
+  .social-row a:hover{border-color:var(--accent); color:var(--accent); transform:translateY(-2px);}
+
+  /* section shell */
+  .section{padding:5rem 0; border-bottom:1px solid var(--border);}
+  .section-head{display:flex; align-items:baseline; gap:1.25rem; margin-bottom:2.75rem;}
+  .section-num{color:var(--accent); font-weight:700; font-size:.95rem; letter-spacing:.1em;}
+  .section-title{font-size:clamp(1.6rem,3.5vw,2.3rem); font-weight:800; letter-spacing:-0.02em;}
+  .fade-up{opacity:0; transform:translateY(24px); transition:opacity .7s ease, transform .7s ease;}
+  .fade-up.in-view{opacity:1; transform:translateY(0);}
+
+  /* timeline */
+  .timeline{position:relative; padding-left:2rem;}
+  .timeline::before{content:''; position:absolute; left:5px; top:6px; bottom:6px; width:2px; background:var(--border);}
+  .tl-item{position:relative; margin-bottom:2.25rem;}
+  .tl-item::before{content:''; position:absolute; left:-2rem; top:6px; width:11px; height:11px; border-radius:50%; background:var(--accent); box-shadow:0 0 0 4px var(--accent-dim);}
+  .tl-role{font-weight:700; font-size:1.05rem;}
+  .tl-company{color:var(--accent); font-weight:600; font-size:.92rem; margin-top:.1rem;}
+  .tl-period{color:var(--text-dim); font-size:.82rem; margin-bottom:.6rem;}
+  .tl-item ul{padding-left:1.1rem; color:var(--text-dim); font-size:.92rem; line-height:1.65;}
+
+  /* cards grid */
+  .grid{display:grid; gap:1.5rem;}
+  .grid-2{grid-template-columns:repeat(auto-fit,minmax(280px,1fr));}
+  .grid-3{grid-template-columns:repeat(auto-fit,minmax(220px,1fr));}
+  .grid-4{grid-template-columns:repeat(auto-fit,minmax(190px,1fr));}
+  .card{
+    background:var(--bg-card); border:1px solid var(--border); border-radius:16px; padding:1.75rem;
+    transition:transform .25s, border-color .25s, box-shadow .25s;
+  }
+  .card:hover{transform:translateY(-4px); border-color:#3a3a3a; box-shadow:0 16px 40px rgba(0,0,0,.35);}
+  .card h3{font-size:1.05rem; font-weight:700; margin-bottom:1rem;}
+
+  .skill-row{display:flex; justify-content:space-between; align-items:center; margin-bottom:.85rem; font-size:.86rem;}
+  .skill-name{color:var(--text-dim); font-weight:500;}
+  .dots{display:flex; gap:4px;}
+  .dot{width:7px; height:7px; border-radius:50%; background:var(--border); transition:background .4s ease, transform .3s ease;}
+  .dot.on{background:var(--accent);}
+  .dot.on.animate-in{transform:scale(1.15);}
+
+  .step-card{text-align:left;}
+  .step-num{font-size:1.6rem; font-weight:800; color:var(--accent-dim); margin-bottom:.5rem;}
+
+  .tag{
+    display:inline-block; font-size:.72rem; font-weight:600; color:var(--accent);
+    background:var(--accent-dim); padding:.2rem .6rem; border-radius:999px; margin:0 .35rem .35rem 0;
+  }
+  .skill-pill{
+    display:inline-block; font-size:.82rem; color:var(--text-dim); border:1px solid var(--border);
+    padding:.4rem .9rem; border-radius:999px; margin:0 .5rem .5rem 0;
+  }
+
+  .tilt-card{transition:box-shadow .35s;}
+  .tilt-card:hover{box-shadow:0 20px 60px rgba(0,0,0,.45), 0 0 0 1px var(--accent-dim);}
+
+  .proj-card{background:var(--bg-card); border:1px solid var(--border); border-radius:18px; overflow:hidden;}
+  .proj-body{padding:1.75rem;}
+  .proj-title{font-size:1.2rem; font-weight:700; margin-bottom:.4rem;}
+  .proj-meta{color:var(--text-dim); font-size:.85rem; margin-bottom:.4rem;}
+  .proj-block{margin-bottom:.65rem; font-size:.9rem; line-height:1.6;}
+  .proj-block b{color:var(--text);}
+  .proj-block span{color:var(--text-dim);}
+  .proj-link{display:inline-flex; align-items:center; gap:.4rem; font-weight:700; font-size:.88rem; text-decoration:none; color:var(--accent); margin-top:.75rem;}
+  .proj-embed-wrap{background:#000; padding:.75rem; border-top:1px solid var(--border); min-height:120px;}
+  .proj-embed-wrap img{width:100%; aspect-ratio:16/9; object-fit:cover; border-radius:8px; display:block; background:#111;}
+
+  .edu-card, .cert-card{
+    background:var(--bg-card); border:1px solid var(--border); border-radius:16px; padding:1.75rem;
+  }
+  .cert-badge{
+    display:inline-flex; align-items:center; gap:.5rem; font-size:.85rem; font-weight:600;
+    padding:.5rem 1rem; border-radius:999px; margin:0 .5rem .5rem 0;
+  }
+  .cert-ms{background:#2563eb22; color:#60a5fa; border:1px solid #2563eb44;}
+  .cert-deloitte{background:#16a34a22; color:#4ade80; border:1px solid #16a34a44;}
+  .cert-cc{background:#9333ea22; color:#c084fc; border:1px solid #9333ea44;}
+
+  .contact-cta{text-align:center; padding:5rem 0 6rem;}
+  .contact-cta h2{font-size:clamp(1.8rem,4vw,2.6rem); font-weight:800; margin-bottom:1rem;}
+  .contact-row{display:flex; justify-content:center; gap:1.5rem; flex-wrap:wrap; margin-top:2rem; color:var(--text-dim); font-size:.92rem;}
+  .contact-row a{text-decoration:none; color:var(--text-dim); transition:color .2s;}
+  .contact-row a:hover{color:var(--accent);}
+
+  footer{padding:2rem 0; text-align:center; color:var(--text-dim); font-size:.8rem;}
+
+</style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="container nav-inner">
+    <div class="brand">AAKASH RAVISH</div>
+    <div class="nav-links">
+      <a href="#journey">Journey</a>
+      <a href="#education">Education</a>
+      <a href="#skills">Skills</a>
+      <a href="#work">Work</a>
+      <a href="#contact">Contact</a>
+      <a href="Aakash-Ravish-CV.pdf" download="Aakash-Ravish-CV.pdf" class="btn"><i class="fa-solid fa-download"></i> CV</a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobileMenu"><i class="fa-solid fa-bars"></i></button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#journey">Journey</a>
+    <a href="#education">Education</a>
+    <a href="#skills">Skills</a>
+    <a href="#work">Work</a>
+    <a href="#contact">Contact</a>
+    <a href="Aakash-Ravish-CV.pdf" download="Aakash-Ravish-CV.pdf" class="btn" style="width:fit-content;"><i class="fa-solid fa-download"></i> Download CV</a>
+  </div>
+</nav>
+
+<!-- 01 About -->
+<header class="hero container">
+  <div class="hero-blob b1" aria-hidden="true"></div>
+  <div class="hero-blob b2" aria-hidden="true"></div>
+  <div class="hero-orb" aria-hidden="true"></div>
+  <span class="pulse-badge"><span class="pulse-dot"></span> Open to work</span>
+  <h1>I turn <span class="accent">floor-level operations</span><br>into decisions leadership can act on.</h1>
+  <p class="lede">Operations and logistics coordinator with hands-on experience across high-volume warehouse operations, freight intake and supply chain coordination at DSV, Nippon Express and Amazon — paired with a Business Analyst's toolkit. I apply advanced Excel, SQL and Tableau to turn that floor-level knowledge into data-driven reporting and process improvement, with a track record coordinating 200+ associate workforce logistics and freight documentation compliance across import/export operations.</p>
+  <div class="hero-actions">
+    <a href="#work" class="btn"><i class="fa-solid fa-briefcase"></i> See my work</a>
+    <a href="mailto:aakashravish@gmail.com" class="btn btn-outline"><i class="fa-solid fa-envelope"></i> Get in touch</a>
+  </div>
+  <div class="social-row">
+    <a href="https://linkedin.com/in/aakash-ravish-305639308" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin-in"></i></a>
+    <a href="https://github.com/Aakash-Ravish" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i></a>
+    <a href="mailto:aakashravish@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+    <a href="tel:+61434913000"><i class="fa-solid fa-phone"></i></a>
+  </div>
+</header>
+
+<!-- 02 Journey -->
+<section class="section container" id="journey">
+  <div class="section-head fade-up"><span class="section-num">01</span><span class="section-title">My Journey</span></div>
+  <div class="timeline">
+    <div class="tl-item fade-up">
+      <div class="tl-role">Inventory Counter / Warehouse Operator</div>
+      <div class="tl-company">DSV</div>
+      <div class="tl-period">Mar 2025 – Aug 2025 · Apr 2026 – Present · Sydney, NSW</div>
+      <ul>
+        <li>Maintained 99%+ inventory accuracy across a 10,000+ SKU warehouse through daily cycle counts and WMS reconciliations (CargoWise, SAP)</li>
+        <li>Received and processed 150+ inbound freight shipments weekly; picked, packed and staged 200+ outbound orders daily via RF scanners and voice-pick</li>
+        <li>Operated counterbalance forklift and pallet jack to relocate 300+ pallets weekly, maintaining zero lost-time injury incidents</li>
+      </ul>
+    </div>
+    <div class="tl-item fade-up">
+      <div class="tl-role">Problem Solver</div>
+      <div class="tl-company">Nippon Express — Amazon Division</div>
+      <div class="tl-period">Feb 2026 – Apr 2026 · Sydney, NSW</div>
+      <ul>
+        <li>Conducted structured stock audits across 5+ fulfilment centre zones to identify and resolve inventory discrepancies</li>
+        <li>Managed freight intake, stowing and receiving workflows for 1,000+ units daily, supporting cycle counts and shrinkage control</li>
+        <li>Escalated 20+ discrepancy findings weekly to operations management with clear reporting and analytical problem-solving</li>
+      </ul>
+    </div>
+    <div class="tl-item fade-up">
+      <div class="tl-role">Assistant Onsite Consultant</div>
+      <div class="tl-company">Amazon</div>
+      <div class="tl-period">Nov 2024 – Jan 2025 · Nov 2025 – Jan 2026 · Sydney, NSW</div>
+      <ul>
+        <li>Sole Business Analyst/HR liaison for 200+ operational associates across three shifts, resolving 15–20 workflow escalations per shift within a 30-minute SLA</li>
+        <li>Modelled and coordinated 48-hour advance rostering across four shift leads and 200+ associates, reducing coverage gaps</li>
+        <li>Conducted 50+ performance discussions and de-escalated 15+ associate concerns weekly to support a productive workplace culture</li>
+      </ul>
+    </div>
+    <div class="tl-item fade-up">
+      <div class="tl-role">Project Manager Intern</div>
+      <div class="tl-company">Skillojo</div>
+      <div class="tl-period">Aug 2025 – Oct 2025 · Remote</div>
+      <ul>
+        <li>Coordinated deliverables and milestone tracking for an 8+ person distributed remote team across a 3-month engagement</li>
+        <li>Wrote SQL in PostgreSQL to extract, join and transform 5,000+ row datasets into weekly velocity reports for project leadership</li>
+        <li>Recognised by supervisor for communication, teamwork and 100% on-time delivery across all assigned milestones</li>
+      </ul>
+    </div>
+    <div class="tl-item fade-up">
+      <div class="tl-role">Sales Lead</div>
+      <div class="tl-company">Krisper</div>
+      <div class="tl-period">Feb 2023 – Jan 2025 · India</div>
+      <ul>
+        <li>Managed a B2B pipeline of 50+ accounts across wholesalers, retailers and distributors, consistently hitting monthly revenue targets through structured CRM tracking and forecasting</li>
+        <li>Built and retained 30+ client accounts; negotiated pricing and contracts for 20+ accounts annually with supply chain teams for on-time fulfilment</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- 03 Core Capabilities -->
+<section class="section container">
+  <div class="section-head fade-up"><span class="section-num">02</span><span class="section-title">Core Capabilities</span></div>
+  <div class="grid grid-2">
+    <div class="card fade-up">
+      <h3>Business Analysis & Strategy</h3>
+      <div class="skill-row"><span class="skill-name">Requirements Gathering</span><div class="dots"><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div></div></div>
+      <div class="skill-row"><span class="skill-name">Process Mapping</span><div class="dots"><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div><div class="dot"></div></div></div>
+      <div class="skill-row"><span class="skill-name">Gap Analysis</span><div class="dots"><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div><div class="dot"></div></div></div>
+    </div>
+    <div class="card fade-up">
+      <h3>Stakeholder & Change</h3>
+      <div class="skill-row"><span class="skill-name">Stakeholder Engagement</span><div class="dots"><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div></div></div>
+      <div class="skill-row"><span class="skill-name">Change Management</span><div class="dots"><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div><div class="dot"></div></div></div>
+      <div class="skill-row"><span class="skill-name">Conflict Resolution</span><div class="dots"><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div><div class="dot"></div></div></div>
+    </div>
+    <div class="card fade-up">
+      <h3>Data & Analytics</h3>
+      <div class="skill-row"><span class="skill-name">SQL (PostgreSQL)</span><div class="dots"><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div><div class="dot"></div></div></div>
+      <div class="skill-row"><span class="skill-name">Tableau</span><div class="dots"><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div><div class="dot"></div></div></div>
+      <div class="skill-row"><span class="skill-name">Advanced Excel</span><div class="dots"><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div></div></div>
+    </div>
+    <div class="card fade-up">
+      <h3>Operations & Project Delivery</h3>
+      <div class="skill-row"><span class="skill-name">Inventory / WMS (CargoWise, SAP)</span><div class="dots"><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div><div class="dot"></div></div></div>
+      <div class="skill-row"><span class="skill-name">Project Coordination</span><div class="dots"><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div></div></div>
+      <div class="skill-row"><span class="skill-name">Milestone Tracking</span><div class="dots"><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div><div class="dot on"></div><div class="dot"></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 03 Education -->
+<section class="section container" id="education">
+  <div class="section-head fade-up"><span class="section-num">03</span><span class="section-title">Education</span></div>
+  <div class="grid grid-2">
+    <div class="edu-card fade-up">
+      <h3 style="font-size:1.15rem; font-weight:700; margin-bottom:.35rem;">Master of Management — Business Administration (Business Analytics)</h3>
+      <div style="color:var(--accent); font-weight:600; margin-bottom:.85rem;">Macquarie University</div>
+      <p style="color:var(--text-dim); font-size:.9rem; line-height:1.6;">Specialisation in Business Analytics, Project Management and Organisational Strategy. Completed a professional placement in project management, applying business analysis and reporting in a live commercial environment. Coursework: Data Analytics, Business Intelligence, Stakeholder Management, Strategic Planning.</p>
+    </div>
+    <div class="edu-card fade-up">
+      <h3 style="font-size:1.15rem; font-weight:700; margin-bottom:.35rem;">Bachelor of Commerce — Business, Management & Marketing</h3>
+      <div style="color:var(--accent); font-weight:600; margin-bottom:.85rem;">Kurukshetra University, Haryana, India</div>
+      <p style="color:var(--text-dim); font-size:.9rem; line-height:1.6;">Core study in financial accounting, commercial law, marketing strategy and business operations. Awarded Certificate of Appreciation for academic excellence at COMMO-FEST (E-Quiz), RKSD (PG) College, Kaithal.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 04 Skills -->
+<section class="section container" id="skills">
+  <div class="section-head fade-up"><span class="section-num">04</span><span class="section-title">Skills & Tools</span></div>
+  <div class="fade-up">
+    <span class="skill-pill">SQL (PostgreSQL)</span>
+    <span class="skill-pill">Tableau</span>
+    <span class="skill-pill">Microsoft Excel (Advanced)</span>
+    <span class="skill-pill">Power BI</span>
+    <span class="skill-pill">Dashboard Design</span>
+    <span class="skill-pill">Requirements Gathering</span>
+    <span class="skill-pill">Process Mapping</span>
+    <span class="skill-pill">Current/Future-State Analysis</span>
+    <span class="skill-pill">Gap Analysis</span>
+    <span class="skill-pill">Stakeholder Engagement</span>
+    <span class="skill-pill">Change Management</span>
+    <span class="skill-pill">Executive Reporting</span>
+    <span class="skill-pill">Workshop Facilitation</span>
+    <span class="skill-pill">Project Coordination</span>
+    <span class="skill-pill">Milestone Tracking</span>
+    <span class="skill-pill">Agile Practices</span>
+    <span class="skill-pill">Inventory Management</span>
+    <span class="skill-pill">Supply Chain Coordination</span>
+    <span class="skill-pill">Freight Handling</span>
+    <span class="skill-pill">Compliance Management</span>
+    <span class="skill-pill">CargoWise / SAP WMS</span>
+    <span class="skill-pill">B2B Sales</span>
+    <span class="skill-pill">Pipeline Management</span>
+    <span class="skill-pill">Contract Negotiation</span>
+    <span class="skill-pill">CRM Systems</span>
+    <span class="skill-pill">GitHub</span>
+  </div>
+</section>
+
+<!-- 05 Selected Work -->
+<section class="section container" id="work">
+  <div class="section-head fade-up"><span class="section-num">05</span><span class="section-title">Selected Work</span></div>
+  <div class="grid grid-2">
+
+    <div class="proj-card fade-up tilt-card">
+      <div class="proj-body">
+        <div class="proj-title">Supply Chain Fulfilment Analysis</div>
+        <div class="proj-meta">SQL · SQLite · Synthetic dataset</div>
+        <span class="tag">#sql</span><span class="tag">#logistics</span><span class="tag">#root-cause</span>
+        <div class="proj-block" style="margin-top:.85rem;"><b>Problem: </b><span>A synthetic inventory/dispatch dataset (modeled on real warehouse fulfilment problems, not real company data) shows a 17.3% order shortfall rate.</span></div>
+        <div class="proj-block"><b>Approach: </b><span>8 SQL queries (joins, CTEs) across inventory and dispatch tables testing three candidate root causes: supplier lead time, zone reconciliation lag, and weekday demand spikes.</span></div>
+        <div class="proj-block"><b>Outcome: </b><span>Confirmed two causes (supplier lead-time mismatch = 67% of shortfall units, Monday demand spikes = 9%) and ruled out the third — the data didn't support a zone-level effect.</span></div>
+      </div>
+      <div class="proj-embed-wrap">
+        <img src="portfolio-assets/supply-chain-root-cause-chart.png" alt="Root cause attribution chart, generated from the real query 08 output" loading="lazy">
+      </div>
+      <div class="proj-body" style="padding-top:1rem;">
+        <a href="https://github.com/Aakash-Ravish/Supply-Chain-Fulfilment-Analysis-" target="_blank" rel="noopener" class="proj-link"><i class="fa-brands fa-github"></i> View repository</a>
+      </div>
+    </div>
+
+    <div class="proj-card fade-up tilt-card">
+      <div class="proj-body">
+        <div class="proj-title">North Star — Mental Health Companion App</div>
+        <div class="proj-meta">Next.js 16 · React 19 · Claude API · Tailwind CSS</div>
+        <span class="tag">#fullstack</span><span class="tag">#ai</span><span class="tag">#product</span>
+        <div class="proj-block" style="margin-top:.85rem;"><b>Problem: </b><span>Mental wellness apps often feel clinical or gimmicky, and store sensitive mood data server-side.</span></div>
+        <div class="proj-block"><b>Approach: </b><span>Built a full conversational companion ("Pip") with mood-reactive animations, journalling and streak tracking — powered by the Claude API, with all personal data kept local-only.</span></div>
+        <div class="proj-block"><b>Outcome: </b><span>Shipped a complete Next.js/React product end-to-end: onboarding flow, chat interface, mood picker, admin panel and full data export/delete controls.</span></div>
+      </div>
+      <div class="proj-embed-wrap">
+        <img src="portfolio-assets/north-star-preview.png" alt="North Star landing page screenshot" loading="lazy">
+      </div>
+      <div class="proj-body" style="padding-top:1rem;">
+        <a href="https://github.com/Aakash-Ravish/north-star" target="_blank" rel="noopener" class="proj-link"><i class="fa-brands fa-github"></i> View repository</a>
+      </div>
+    </div>
+
+    <div class="proj-card fade-up tilt-card">
+      <div class="proj-body">
+        <div class="proj-title">Tableau Sales Performance Dashboard</div>
+        <div class="proj-meta">Tableau Public · Business Intelligence</div>
+        <span class="tag">#bi</span><span class="tag">#tableau</span><span class="tag">#consulting</span>
+        <div class="proj-block" style="margin-top:.85rem;"><b>Problem: </b><span>Raw sales data with no way for stakeholders to self-serve regional performance answers.</span></div>
+        <div class="proj-block"><b>Approach: </b><span>Full BI deliverable — requirements gathering through to a published, interactive dashboard replicating a consulting engagement.</span></div>
+        <div class="proj-block"><b>Outcome: </b><span>Live, published dashboard on Tableau Public — a working link, not a screenshot.</span></div>
+      </div>
+      <div class="proj-embed-wrap">
+        <a href="https://public.tableau.com/views/Project1_17772190652080/SalesDashboard?:language=en-US&:display_count=n&:origin=viz_share_link" target="_blank" rel="noopener">
+          <img src="https://public.tableau.com/static/images/Pr/Project1_17772190652080/SalesDashboard/1.png" alt="Sales Dashboard preview">
+        </a>
+      </div>
+      <div class="proj-body" style="padding-top:1rem;">
+        <a href="https://public.tableau.com/views/Project1_17772190652080/SalesDashboard?:language=en-US&:display_count=n&:origin=viz_share_link" target="_blank" rel="noopener" class="proj-link"><i class="fa-solid fa-chart-line"></i> Open live dashboard</a>
+        &nbsp;&nbsp;
+        <a href="https://github.com/Aakash-Ravish/Sales-Dashboard-Tableau" target="_blank" rel="noopener" class="proj-link"><i class="fa-brands fa-github"></i> View repository</a>
+      </div>
+    </div>
+
+    <div class="proj-card fade-up tilt-card">
+      <div class="proj-body">
+        <div class="proj-title">Spotify Streaming Data Analysis</div>
+        <div class="proj-meta">SQL — PostgreSQL</div>
+        <span class="tag">#sql</span><span class="tag">#analytics</span>
+        <div class="proj-block" style="margin-top:.85rem;"><b>Problem: </b><span>Understand what actually drives listening behaviour in a large streaming dataset.</span></div>
+        <div class="proj-block"><b>Approach: </b><span>Complex SQL — joins, aggregations and window functions — to explore streaming behaviour patterns.</span></div>
+        <div class="proj-block"><b>Outcome: </b><span>Exploratory data analysis outputs surfacing which track segments drive disproportionate streaming volume.</span></div>
+      </div>
+      <div class="proj-embed-wrap">
+        <img src="portfolio-assets/spotify-preview.png" alt="Spotify SQL query execution plan" loading="lazy">
+      </div>
+      <div class="proj-body" style="padding-top:1rem;">
+        <a href="https://github.com/Aakash-Ravish/Spotify" target="_blank" rel="noopener" class="proj-link"><i class="fa-brands fa-github"></i> View repository</a>
+      </div>
+    </div>
+
+    <div class="proj-card fade-up tilt-card">
+      <div class="proj-body">
+        <div class="proj-title">Vrinda Store — Excel Sales Dashboard</div>
+        <div class="proj-meta">Microsoft Excel</div>
+        <span class="tag">#excel</span><span class="tag">#reporting</span>
+        <div class="proj-block" style="margin-top:.85rem;"><b>Problem: </b><span>Sales performance buried in raw transaction exports with no self-serve view for the business.</span></div>
+        <div class="proj-block"><b>Approach: </b><span>End-to-end interactive dashboard using advanced pivot tables, slicers and dynamic charts.</span></div>
+        <div class="proj-block"><b>Outcome: </b><span>Actionable, filterable view of sales performance built entirely in Excel.</span></div>
+        <a href="https://github.com/Aakash-Ravish/Vrinda-Store-Report" target="_blank" rel="noopener" class="proj-link"><i class="fa-brands fa-github"></i> View repository</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- 06 How I Work -->
+<section class="section container">
+  <div class="section-head fade-up"><span class="section-num">06</span><span class="section-title">How I Work</span></div>
+  <div class="grid grid-3">
+    <div class="card step-card fade-up"><div class="step-num">01</div><h3>Define the Problem</h3><p style="color:var(--text-dim); font-size:.9rem;">Clarify the real business question before touching a spreadsheet.</p></div>
+    <div class="card step-card fade-up"><div class="step-num">02</div><h3>Map Current State</h3><p style="color:var(--text-dim); font-size:.9rem;">Walk the actual process — floor, system, and stakeholder — not the assumed one.</p></div>
+    <div class="card step-card fade-up"><div class="step-num">03</div><h3>Gather & Analyse</h3><p style="color:var(--text-dim); font-size:.9rem;">SQL, Excel and Tableau to pull signal out of operational noise.</p></div>
+    <div class="card step-card fade-up"><div class="step-num">04</div><h3>Synthesise Insight</h3><p style="color:var(--text-dim); font-size:.9rem;">Turn findings into a recommendation a stakeholder can act on this week.</p></div>
+    <div class="card step-card fade-up"><div class="step-num">05</div><h3>Deliver & Iterate</h3><p style="color:var(--text-dim); font-size:.9rem;">Ship the dashboard or doc, then track whether it actually changed behaviour.</p></div>
+  </div>
+</section>
+
+<!-- 07 Certifications -->
+<section class="section container">
+  <div class="section-head fade-up"><span class="section-num">07</span><span class="section-title">Certifications</span></div>
+  <div class="fade-up" style="display:flex; flex-wrap:wrap; gap:.6rem;">
+    <span class="cert-badge cert-ms"><i class="fa-brands fa-microsoft"></i> Career Essentials in Business Analysis — Microsoft &amp; LinkedIn Learning</span>
+    <span class="cert-badge cert-deloitte"><i class="fa-solid fa-award"></i> Data Analytics Job Simulation — Deloitte Australia</span>
+    <span class="cert-badge cert-cc"><i class="fa-solid fa-code"></i> Introduction to Tableau &amp; Excel for Data Analysis — Codecademy</span>
+  </div>
+</section>
+
+<!-- 08 Contact -->
+<section class="contact-cta container" id="contact">
+  <span class="pulse-badge"><span class="pulse-dot"></span> Open to Business Analyst, Operations & Analytics roles</span>
+  <h2 style="margin-top:1.25rem;">Let's talk.</h2>
+  <p style="color:var(--text-dim); max-width:520px; margin:0 auto;">Sydney, NSW · Available for Business Analyst, Operations Coordinator, Supply Chain Analyst and Project Coordinator roles across Australia.</p>
+  <div class="hero-actions" style="justify-content:center;">
+    <a href="mailto:aakashravish@gmail.com" class="btn"><i class="fa-solid fa-envelope"></i> aakashravish@gmail.com</a>
+    <a href="https://linkedin.com/in/aakash-ravish-305639308" target="_blank" rel="noopener" class="btn btn-outline"><i class="fa-brands fa-linkedin-in"></i> LinkedIn</a>
+    <a href="https://github.com/Aakash-Ravish" target="_blank" rel="noopener" class="btn btn-outline"><i class="fa-brands fa-github"></i> GitHub</a>
+  </div>
+  <div class="contact-row">
+    <span><i class="fa-solid fa-location-dot"></i> Sydney, NSW, Australia</span>
+    <span><i class="fa-solid fa-phone"></i> +61 434 913 000</span>
+  </div>
+</section>
+
+<footer>&copy; 2026 Aakash Ravish. Built with intent, not a template.</footer>
+
+
+<script>
+  // mobile menu
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  hamburger.addEventListener('click', () => {
+    const open = mobileMenu.classList.toggle('open');
+    hamburger.setAttribute('aria-expanded', open);
+  });
+  mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.remove('open')));
+
+  // scroll reveal, staggered per sibling group so sections cascade in rather than popping together
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  document.querySelectorAll('.grid, .timeline').forEach(group => {
+    Array.from(group.children).forEach((el, i) => {
+      if (el.classList.contains('fade-up') && !reduceMotion) {
+        el.style.transitionDelay = Math.min(i * 90, 360) + 'ms';
+      }
+    });
+  });
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      e.target.classList.add('in-view');
+      if (e.target.classList.contains('card')) {
+        const dots = e.target.querySelectorAll('.dot.on');
+        dots.forEach((d, i) => {
+          setTimeout(() => d.classList.add('animate-in'), i * 60);
+          setTimeout(() => d.classList.remove('animate-in'), i * 60 + 300);
+        });
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+  // subtle 3D tilt on project cards, mouse-position driven.
+  // No transition during mousemove (tracks the cursor instantly, avoids laggy trailing);
+  // transition only applies on mouseleave, for a smooth snap back to neutral.
+  if (!reduceMotion && matchMedia('(hover: hover)').matches) {
+    document.querySelectorAll('.tilt-card').forEach(card => {
+      card.addEventListener('mousemove', (e) => {
+        card.style.transition = 'none';
+        const r = card.getBoundingClientRect();
+        const x = (e.clientX - r.left) / r.width - 0.5;
+        const y = (e.clientY - r.top) / r.height - 0.5;
+        card.style.transform = `perspective(900px) rotateY(${x * 6}deg) rotateX(${-y * 6}deg) translateY(-4px)`;
+      });
+      card.addEventListener('mouseleave', () => {
+        card.style.transition = 'transform .5s cubic-bezier(.2,.8,.2,1)';
+        card.style.transform = '';
+      });
+    });
+  }
+
+</script>
+</body>
+</html>
