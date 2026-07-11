@@ -19,7 +19,7 @@ education, with a downloadable CV.
 
 ## Projects featured
 
-- [Supply Chain Fulfilment Analysis](https://github.com/Aakash-Ravish/Supply-Chain-Fulfilment-Analysis-) — SQL root-cause analysis
+- [Supply Chain Fulfilment Analysis](https://github.com/Aakash-Ravish/supply-chain-fulfilment-analysis) — SQL root-cause analysis
 - [Spotify Streaming Data Analysis](https://github.com/Aakash-Ravish/Spotify) — SQL, 20k tracks
 - [North Star](https://github.com/Aakash-Ravish/north-star) — full-stack wellness app ([live](https://north-star-liard.vercel.app))
 - [Tableau Sales Dashboard](https://github.com/Aakash-Ravish/Sales-Dashboard-Tableau) — interactive, on Tableau Public
